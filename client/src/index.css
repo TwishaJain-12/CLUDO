@@ -1,0 +1,2091 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  min-height: 100vh;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Light mode body */
+.light body,
+html.light body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Light mode overrides for common elements */
+.light .bg-dark-900 {
+  background-color: #f8fafc !important;
+}
+
+.light .bg-dark-800 {
+  background-color: #ffffff !important;
+}
+
+.light .bg-dark-700 {
+  background-color: #f1f5f9 !important;
+}
+
+.light .bg-dark-600 {
+  background-color: #e2e8f0 !important;
+}
+
+.light .text-white {
+  color: #0f172a !important;
+}
+
+.light .text-dark-100 {
+  color: #1e293b !important;
+}
+
+.light .text-dark-200 {
+  color: #334155 !important;
+}
+
+.light .text-dark-300 {
+  color: #475569 !important;
+}
+
+.light .text-dark-400 {
+  color: #64748b !important;
+}
+
+.light .border-dark-700 {
+  border-color: #e2e8f0 !important;
+}
+
+.light .border-dark-600 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Light mode navbar */
+.light nav {
+  background-color: rgba(248, 250, 252, 0.8) !important;
+}
+
+/* Light mode cards */
+.light .bg-dark-800\/50 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.light .bg-dark-700\/50 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+}
+
+/* Light mode inputs */
+.light .input-field,
+.light .select-field {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+.light .input-field::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Light mode image carousel controls */
+.light .bg-dark-900\/80 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light .bg-dark-900\/60 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.light .bg-dark-900 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Light mode image carousel navigation buttons */
+.light .image-nav-button {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(203, 213, 225, 0.5) !important;
+}
+
+.light .image-nav-button:hover {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Light mode image dots container */
+.light .image-dots-container {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(203, 213, 225, 0.3) !important;
+}
+
+/* Light mode image dots - inactive */
+.light .image-dot {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+}
+
+.light .image-dot:hover {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+}
+
+/* Ensure primary color dots are visible in light mode */
+.light .bg-primary-400 {
+  background-color: #3b82f6 !important;
+}
+
+/* Light mode image counter */
+.light .image-counter {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(203, 213, 225, 0.5) !important;
+}
+
+/* Light mode share modal specific overrides */
+.light .bg-dark-700\/30 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+}
+
+.light .bg-dark-800\/50 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light .border-dark-600\/50 {
+  border-color: rgba(203, 213, 225, 0.6) !important;
+}
+
+/* Light mode share modal buttons hover */
+.light .bg-dark-700:hover {
+  background-color: #e2e8f0 !important;
+}
+
+/* Light mode share modal buttons */
+.light .share-option-button {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(203, 213, 225, 0.6) !important;
+}
+
+.light .share-option-button:hover {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Light mode share icon containers */
+.light .share-icon-container {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(203, 213, 225, 0.4) !important;
+}
+
+.light .share-icon-container:hover {
+  background-color: rgba(59, 130, 246, 0.08) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Light mode modal close button */
+.light .modal-close-button {
+  color: #64748b !important;
+}
+
+.light .modal-close-button:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* Light mode navbar header */
+.light .navbar-header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .navbar-logo-text {
+  color: #0f172a !important;
+}
+
+/* Light mode navbar links */
+.light .nav-link {
+  color: #475569 !important;
+}
+
+.light .nav-link:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+.light .nav-link.bg-primary-600 {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+/* Light mode navbar theme toggle */
+.light .nav-theme-toggle {
+  color: #475569 !important;
+}
+
+.light .nav-theme-toggle:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* Light mode navbar sign in button */
+.light .navbar-signin {
+  color: #475569 !important;
+}
+
+.light .navbar-signin:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* Light mode navbar user text */
+.light .navbar-user-text {
+  color: #64748b !important;
+}
+
+/* Light mode navbar mobile toggle */
+.light .nav-mobile-toggle {
+  color: #475569 !important;
+}
+
+.light .nav-mobile-toggle:hover {
+  color: #0f172a !important;
+}
+
+/* Light mode mobile menu overlay */
+.light .mobile-menu-overlay {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Light mode mobile menu drawer */
+.light .mobile-menu-drawer {
+  background-color: #ffffff !important;
+  border-left: 1px solid #e2e8f0 !important;
+}
+
+/* Light mode mobile menu header */
+.light .mobile-menu-header {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .mobile-menu-header .text-white {
+  color: #0f172a !important;
+}
+
+/* Light mode mobile menu close button */
+.light .mobile-menu-close {
+  color: #64748b !important;
+}
+
+.light .mobile-menu-close:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* Light mode mobile menu links */
+.light .mobile-menu-link {
+  color: #475569 !important;
+}
+
+.light .mobile-menu-link:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+.light .mobile-menu-link.bg-primary-600 {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.light .mobile-menu-link.text-amber-400 {
+  color: #f59e0b !important;
+}
+
+.light .mobile-menu-link.text-amber-400:hover {
+  color: #d97706 !important;
+  background-color: #fef3c7 !important;
+}
+
+/* Light mode mobile menu user section */
+.light .mobile-menu-user {
+  border-color: #e2e8f0 !important;
+}
+
+.light .mobile-menu-user .text-dark-300 {
+  color: #475569 !important;
+}
+
+/* Light mode filter sidebar options */
+.light .filter-option:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.light .filter-option .text-dark-300 {
+  color: #475569 !important;
+}
+
+.light .filter-option:hover .text-dark-300 {
+  color: #0f172a !important;
+}
+
+.light .filter-option .text-dark-400 {
+  color: #64748b !important;
+}
+
+.light .filter-option:hover .text-dark-400 {
+  color: #475569 !important;
+}
+
+.light .filter-option .bg-dark-600 {
+  background-color: #e2e8f0 !important;
+}
+
+.light .filter-option:hover .bg-dark-600 {
+  background-color: #cbd5e1 !important;
+}
+
+/* Light mode filter reset button */
+.light .filter-reset-button {
+  color: #64748b !important;
+}
+
+.light .filter-reset-button:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* Light mode home page sign in button */
+.light .home-signin-button .btn-primary {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.light .home-signin-button .btn-primary:hover {
+  background-color: #2563eb !important;
+}
+
+/* Light mode navbar buttons */
+.light .btn-primary {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.light .btn-primary:hover {
+  background-color: #2563eb !important;
+}
+
+.light .btn-ghost {
+  color: #475569 !important;
+}
+
+.light .btn-ghost:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* Light mode spot a problem card */
+.light .spot-problem-card {
+  background: linear-gradient(to bottom right, #3b82f6, #2563eb) !important;
+}
+
+.light .spot-problem-title {
+  color: #ffffff !important;
+}
+
+.light .spot-problem-description {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Spot problem button - default (dark theme) */
+.spot-problem-button {
+  background-color: #ffffff !important;
+  color: #3b82f6 !important;
+  border: none !important;
+}
+
+.spot-problem-button:hover {
+  background-color: #eff6ff !important;
+  color: #2563eb !important;
+}
+
+/* Light theme - button should be white with blue text (same as dark since it's on blue gradient) */
+.light .spot-problem-button {
+  background-color: #ffffff !important;
+  color: #3b82f6 !important;
+  border: none !important;
+}
+
+.light .spot-problem-button:hover {
+  background-color: #eff6ff !important;
+  color: #2563eb !important;
+}
+
+/* Custom scrollbar - Dark mode (default) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Light mode scrollbar */
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Extra small screen utilities (below 390px) */
+@media (max-width: 389px) {
+  .home-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+}
+
+@layer components {
+
+  /* Container with max width */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Glass effect cards */
+  .glass-card {
+    @apply bg-dark-800/50 backdrop-blur-lg border border-dark-700/50 rounded-xl;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2.5 px-5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply bg-dark-700 hover:bg-dark-600 text-dark-100 font-medium py-2.5 px-5 rounded-lg border border-dark-600 transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-dark-500 focus:ring-offset-2 focus:ring-offset-dark-900 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply text-dark-300 hover:text-white hover:bg-dark-700/50 font-medium py-2 px-4 rounded-lg transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-dark-500 focus:ring-offset-2 focus:ring-offset-dark-900;
+  }
+
+  /* Input fields */
+  .input-field {
+    @apply w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-3 text-dark-100 placeholder:text-dark-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-200;
+  }
+
+  /* Select dropdown */
+  .select-field {
+    @apply w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-3 text-dark-100 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-200 cursor-pointer appearance-none pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 1.5rem;
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 ease-out hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary-500/5;
+  }
+
+  /* Status badges */
+  .badge-reported {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+
+  .badge-in-progress {
+    @apply bg-amber-500/20 text-amber-400 border border-amber-500/30;
+  }
+
+  .badge-resolved {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  /* Category badges */
+  .badge-category {
+    @apply bg-primary-500/20 text-primary-300 border border-primary-500/30;
+  }
+
+  /* Link styles */
+  .link-primary {
+    @apply text-primary-400 hover:text-primary-300 transition-colors duration-200 underline-offset-2 hover:underline;
+  }
+
+  /* Section titles */
+  .section-title {
+    @apply text-2xl sm:text-3xl font-bold text-white mb-2;
+  }
+
+  .section-subtitle {
+    @apply text-dark-400 text-lg mb-8;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Fade in animation */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   LEAFLET MAP OVERRIDES
+   ============================================ */
+
+.leaflet-container {
+  background: #1e293b;
+  font-family: 'Inter', system-ui, sans-serif;
+  z-index: 0 !important;
+}
+
+/* Limit all Leaflet panes z-index to stay below mobile menu */
+.leaflet-pane,
+.leaflet-tile-pane,
+.leaflet-overlay-pane,
+.leaflet-shadow-pane,
+.leaflet-marker-pane,
+.leaflet-tooltip-pane,
+.leaflet-popup-pane,
+.leaflet-map-pane {
+  z-index: auto !important;
+}
+
+/* Leaflet controls should stay within map bounds */
+.leaflet-control-container {
+  z-index: 50 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 50 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #1e293b;
+  color: #f1f5f9;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-popup-tip {
+  background: #1e293b;
+  border-top: 1px solid #334155;
+}
+
+.leaflet-popup-close-button {
+  color: #94a3b8 !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #f1f5f9 !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+}
+
+.leaflet-control-zoom a {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #334155 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #334155 !important;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  background: #3b82f6;
+  border: 3px solid #1e293b;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.5);
+}
+
+/* ============================================
+   CLERK OVERRIDES
+   ============================================ */
+
+/* Root container */
+.cl-rootBox {
+  width: 100% !important;
+  max-width: 28rem !important;
+  margin: 0 auto !important;
+}
+
+.cl-internal-hpxssd {
+  width: 100% !important;
+  max-width: 28rem !important;
+  margin: 0 auto !important;
+}
+
+/* Card styling - override for custom auth pages */
+.cl-card {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Remove cardBox shadow/border */
+.cl-cardBox {
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Remove main element shadow */
+.cl-main {
+  box-shadow: none !important;
+}
+
+@media (min-width: 640px) {
+  .cl-card {
+    padding: 0.3rem !important;
+  }
+}
+
+/* Header */
+.cl-headerTitle {
+  color: #f1f5f9 !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+@media (min-width: 640px) {
+  .cl-headerTitle {
+    font-size: 1.875rem !important;
+  }
+}
+
+.cl-headerSubtitle {
+  color: #94a3b8 !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 640px) {
+  .cl-headerSubtitle {
+    font-size: 1rem !important;
+  }
+}
+
+/* Form fields */
+.cl-formFieldLabel {
+  color: #cbd5e1 !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.5rem !important;
+  width: 100% !important;
+}
+
+/* Ensure label text container doesn't overflow */
+.cl-formFieldLabel>label,
+.cl-formFieldLabel>*:not(span):not([class*="optional"]) {
+  flex: 1 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* Optional text styling - prevent overlap */
+.cl-formFieldLabel span,
+.cl-formFieldLabel .cl-optionalIndicator,
+.cl-formFieldLabelRow span,
+.cl-formFieldLabelRow .cl-optionalIndicator,
+.cl-formFieldLabelRow [class*="optional"],
+.cl-formFieldLabelRow [class*="Optional"] {
+  color: #64748b !important;
+  font-size: 0.75rem !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+  padding-left: 0.5rem !important;
+}
+
+/* Form field label container - ensure proper layout */
+.cl-formFieldLabelRow {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  width: 100% !important;
+}
+
+/* Ensure label text doesn't overlap with optional - wrap label text */
+.cl-formFieldLabel>*:first-child:not(span):not([class*="optional"]) {
+  flex: 1 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Handle any nested structure for optional text */
+.cl-formFieldLabel>span:last-child,
+.cl-formFieldLabel>[class*="optional"]:last-child,
+.cl-formFieldLabelRow>span:last-child,
+.cl-formFieldLabelRow>[class*="optional"]:last-child {
+  flex-shrink: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+/* General form field wrapper to prevent overlap */
+.cl-formField {
+  width: 100% !important;
+}
+
+.cl-formFieldRow {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  width: 100% !important;
+}
+
+/* Ensure proper spacing in form field containers */
+.cl-formFieldInputWrapper,
+.cl-formFieldInputContainer {
+  width: 100% !important;
+}
+
+.cl-formFieldInput {
+  background-color: #1e293b !important;
+  border: 1px solid #475569 !important;
+  border-radius: 0.5rem !important;
+  color: #f1f5f9 !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  width: 100% !important;
+  transition: all 0.2s ease !important;
+}
+
+.cl-formFieldInput::placeholder {
+  color: #94a3b8 !important;
+}
+
+.cl-formFieldInput:focus {
+  outline: none !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Social buttons */
+.cl-socialButtonsBlockButton {
+  background-color: #334155 !important;
+  border: 1px solid #475569 !important;
+  border-radius: 0.5rem !important;
+  color: #f1f5f9 !important;
+  padding: 0.75rem 1rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.cl-socialButtonsBlockButton:hover {
+  background-color: #475569 !important;
+  border-color: #64748b !important;
+}
+
+.cl-socialButtonsBlockButtonText {
+  color: #f1f5f9 !important;
+  font-weight: 500 !important;
+}
+
+/* Google icon size fix */
+.cl-socialButtonsBlockButton svg,
+.cl-socialButtonsBlockButton img,
+.cl-socialButtonsBlockButton [class*="icon"],
+.cl-socialButtonsBlockButton [class*="Icon"] {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  margin-right: 0.75rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure icon container has proper spacing */
+.cl-socialButtonsBlockButton>*:first-child {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+@media (min-width: 640px) {
+
+  .cl-socialButtonsBlockButton svg,
+  .cl-socialButtonsBlockButton img,
+  .cl-socialButtonsBlockButton [class*="icon"],
+  .cl-socialButtonsBlockButton [class*="Icon"] {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+  }
+}
+
+/* Badge - "Last used" text - dark mode default */
+.cl-badge,
+.cl-lastAuthenticationStrategyBadge,
+[class*="cl-badge"],
+[class*="cl-lastAuthentication"],
+.cl-internal-badge,
+[class*="badge"] {
+  color: #93c5fd !important;
+  border: 1px solid #475569 !important;
+  border-radius: 0.375rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  padding: 6px 6px !important;
+  background-color: #1e293b !important;
+}
+
+/* Badge - light mode */
+.light .cl-badge,
+.light .cl-lastAuthenticationStrategyBadge,
+.light [class*="cl-badge"],
+.light [class*="cl-lastAuthentication"],
+.light .cl-internal-badge,
+.light [class*="badge"] {
+  color: #1d4ed8 !important;
+  border: 1px solid #93c5fd !important;
+  background-color: #dbeafe !important;
+}
+
+/* Primary button */
+.cl-formButtonPrimary {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  width: 100% !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3) !important;
+  margin-top: 1rem !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background-color: #2563eb !important;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+.cl-formButtonPrimary:active {
+  transform: translateY(0) !important;
+}
+
+.cl-formButtonPrimary:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Ensure button text is always white */
+.cl-formButtonPrimary,
+.cl-formButtonPrimary *,
+.cl-formButtonPrimary span,
+.cl-formButtonPrimary svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Footer styling */
+.cl-footer,
+[class*="cl-footer"],
+[class*="cl-cardFooter"] {
+  background-color: #0f172a !important;
+  border-top: 1px solid #334155 !important;
+  padding: 1.5rem !important;
+  margin-top: 1.5rem !important;
+  border-radius: 0 0 0.75rem 0.75rem !important;
+}
+
+.cl-cardFooter {
+  background-color: #0f172a !important;
+  border-top: 1px solid #334155 !important;
+  padding: 1.5rem !important;
+  margin-top: 1.5rem !important;
+  border-radius: 0 0 0.75rem 0.75rem !important;
+}
+
+/* Clerk internal footer classes */
+.cl-internal-*[class*="footer"],
+[class*="cl-internal"][class*="footer"],
+[class*="cl-internal"][class*="Footer"] {
+  background-color: #0f172a !important;
+  border-top: 1px solid #334155 !important;
+}
+
+/* Links */
+.cl-footerActionLink {
+  color: #60a5fa !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+  text-decoration: none !important;
+}
+
+.cl-footerActionLink:hover {
+  color: #93c5fd !important;
+  text-decoration: underline !important;
+}
+
+.cl-footerActionText {
+  color: #94a3b8 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Clerk branding */
+.cl-footerPages {
+  color: #64748b !important;
+  font-size: 0.75rem !important;
+}
+
+.cl-footerPages svg,
+.cl-footerPages img {
+  opacity: 0.7 !important;
+}
+
+/* Development mode indicator */
+.cl-footerPages [class*="development"],
+.cl-footerPages [class*="Development"] {
+  color: #f59e0b !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+}
+
+/* Footer text elements */
+.cl-footerAction {
+  color: #94a3b8 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Additional footer elements */
+.cl-footerPagesText,
+.cl-footerPagesTextContainer {
+  color: #64748b !important;
+  font-size: 0.75rem !important;
+}
+
+/* Clerk logo/branding in footer */
+.cl-footerPages svg path,
+.cl-footerPages svg circle,
+.cl-footerPages svg rect {
+  fill: #64748b !important;
+}
+
+/* Development mode text */
+[class*="cl-footer"] [class*="development"],
+[class*="cl-footer"] [class*="Development"],
+[class*="cl-cardFooter"] [class*="development"],
+[class*="cl-cardFooter"] [class*="Development"] {
+  color: #f59e0b !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+}
+
+/* Footer container spacing */
+.cl-footer>*,
+.cl-cardFooter>* {
+  margin-bottom: 0.5rem !important;
+}
+
+.cl-footer>*:last-child,
+.cl-cardFooter>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Footer inner containers */
+.cl-footerInner,
+.cl-cardFooterInner {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+}
+
+/* Footer action container */
+.cl-footerActionContainer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  flex-wrap: wrap !important;
+}
+
+/* Ensure footer text is readable */
+.cl-footer p,
+.cl-cardFooter p,
+.cl-footer span,
+.cl-cardFooter span {
+  line-height: 1.5 !important;
+}
+
+/* Divider */
+.cl-dividerLine {
+  background-color: #334155 !important;
+  height: 1px !important;
+}
+
+.cl-dividerText {
+  color: #94a3b8 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Error messages */
+.cl-formFieldErrorText {
+  color: #f87171 !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Success messages */
+.cl-formFieldSuccessText {
+  color: #34d399 !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.25rem !important;
+}
+
+/* OTP code fields */
+.cl-otpCodeFieldInput {
+  background-color: #1e293b !important;
+  border: 1px solid #475569 !important;
+  border-radius: 0.5rem !important;
+  color: #f1f5f9 !important;
+}
+
+.cl-otpCodeFieldInput:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Identity preview */
+.cl-identityPreviewText {
+  color: #f1f5f9 !important;
+}
+
+.cl-identityPreviewEditButton {
+  color: #60a5fa !important;
+}
+
+.cl-identityPreviewEditButton:hover {
+  color: #93c5fd !important;
+}
+
+/* Resend code link */
+.cl-formResendCodeLink {
+  color: #60a5fa !important;
+}
+
+.cl-formResendCodeLink:hover {
+  color: #93c5fd !important;
+}
+
+/* Alert text */
+.cl-alertText {
+  color: #cbd5e1 !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .cl-card {
+    padding: 0.5rem !important;
+  }
+
+  .cl-headerTitle {
+    font-size: 1.5rem !important;
+  }
+
+  .cl-formFieldInput,
+  .cl-formButtonPrimary,
+  .cl-socialButtonsBlockButton {
+    padding: 0.875rem 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  .cl-formFieldLabel {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Light mode overrides for Clerk */
+.light .cl-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .cl-headerTitle {
+  color: #0f172a !important;
+}
+
+.light .cl-headerSubtitle {
+  color: #64748b !important;
+}
+
+.light .cl-formFieldLabel {
+  color: #475569 !important;
+}
+
+.light .cl-formFieldInput {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.light .cl-formFieldInput::placeholder {
+  color: #94a3b8 !important;
+}
+
+.light .cl-formFieldInput:focus {
+  border-color: #3b82f6 !important;
+}
+
+.light .cl-socialButtonsBlockButton {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.light .cl-socialButtonsBlockButton:hover {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light .cl-socialButtonsBlockButtonText {
+  color: #0f172a !important;
+}
+
+/* Light mode button text - ensure white */
+.light .cl-formButtonPrimary,
+.light .cl-formButtonPrimary *,
+.light .cl-formButtonPrimary span,
+.light .cl-formButtonPrimary svg,
+.light .cl-formButtonPrimary button {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.light .cl-formButtonPrimary:hover,
+.light .cl-formButtonPrimary:hover *,
+.light .cl-formButtonPrimary:hover span {
+  color: #ffffff !important;
+}
+
+/* Light mode footer overrides */
+.light .cl-footer,
+.light [class*="cl-footer"],
+.light .cl-cardFooter,
+.light [class*="cl-cardFooter"],
+.light [class*="cl-internal"][class*="footer"],
+.light [class*="cl-internal"][class*="Footer"] {
+  background-color: #f8fafc !important;
+  background: #f8fafc !important;
+  border-top-color: #e2e8f0 !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Override any inline styles or default Clerk footer backgrounds */
+.light .cl-card>[class*="footer"],
+.light .cl-card>[class*="Footer"],
+.light .cl-rootBox [class*="footer"],
+.light .cl-rootBox [class*="Footer"],
+.light [class*="cl-card"] [class*="footer"],
+.light [class*="cl-card"] [class*="Footer"] {
+  background-color: #f8fafc !important;
+  background: #f8fafc !important;
+}
+
+/* Target any element with footer in class name within card */
+.light .cl-card [class*="footer"],
+.light .cl-card [class*="Footer"] {
+  background-color: #f8fafc !important;
+  background: #f8fafc !important;
+  border-top-color: #e2e8f0 !important;
+}
+
+.light .cl-footerActionText {
+  color: #64748b !important;
+}
+
+.light .cl-footerAction {
+  color: #64748b !important;
+}
+
+.light .cl-footerActionLink {
+  color: #3b82f6 !important;
+}
+
+.light .cl-footerActionLink:hover {
+  color: #2563eb !important;
+}
+
+.light .cl-footerPages {
+  color: #64748b !important;
+}
+
+.light .cl-footerPages svg,
+.light .cl-footerPages img {
+  opacity: 0.8 !important;
+}
+
+.light .cl-footerPages [class*="development"],
+.light .cl-footerPages [class*="Development"] {
+  color: #d97706 !important;
+}
+
+.light .cl-footerPagesText,
+.light .cl-footerPagesTextContainer {
+  color: #64748b !important;
+}
+
+.light .cl-footerPages svg path,
+.light .cl-footerPages svg circle,
+.light .cl-footerPages svg rect {
+  fill: #64748b !important;
+}
+
+.light [class*="cl-footer"] [class*="development"],
+.light [class*="cl-footer"] [class*="Development"],
+.light [class*="cl-cardFooter"] [class*="development"],
+.light [class*="cl-cardFooter"] [class*="Development"] {
+  color: #d97706 !important;
+}
+
+/* Light mode footer text elements */
+.light .cl-footer p,
+.light .cl-cardFooter p,
+.light .cl-footer span,
+.light .cl-cardFooter span,
+.light [class*="cl-footer"] p,
+.light [class*="cl-footer"] span,
+.light [class*="cl-cardFooter"] p,
+.light [class*="cl-cardFooter"] span {
+  line-height: 1.5 !important;
+  color: #64748b !important;
+}
+
+/* Ensure all footer text elements are properly colored in light mode */
+.light .cl-footer *,
+.light .cl-cardFooter *,
+.light [class*="cl-footer"] *:not([class*="development"]):not([class*="Development"]):not(a),
+.light [class*="cl-cardFooter"] *:not([class*="development"]):not([class*="Development"]):not(a) {
+  color: #64748b !important;
+}
+
+/* Exception for links in footer */
+.light .cl-footer a,
+.light .cl-cardFooter a,
+.light [class*="cl-footer"] a,
+.light [class*="cl-cardFooter"] a {
+  color: #3b82f6 !important;
+}
+
+.light .cl-dividerLine {
+  background-color: #e2e8f0 !important;
+}
+
+.light .cl-dividerText {
+  color: #64748b !important;
+}
+
+.light .cl-identityPreviewText {
+  color: #0f172a !important;
+}
+
+.light .cl-otpCodeFieldInput {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.light .cl-alertText {
+  color: #475569 !important;
+}
+
+/* ============================================
+   CLERK USER BUTTON & PROFILE MODAL
+   ============================================ */
+
+/* UserButton popover/dropdown - Dark mode (default) */
+.cl-userButtonPopoverCard {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+  overflow: hidden !important;
+}
+
+/* UserButton popover actions */
+.cl-userButtonPopoverActionButton {
+  color: #f1f5f9 !important;
+  background-color: transparent !important;
+}
+
+.cl-userButtonPopoverActionButton:hover {
+  background-color: #334155 !important;
+}
+
+.cl-userButtonPopoverActionButtonText {
+  color: #f1f5f9 !important;
+}
+
+.cl-userButtonPopoverActionButtonIcon {
+  color: #94a3b8 !important;
+}
+
+/* UserButton user preview section */
+.cl-userPreview {
+  background-color: #1e293b !important;
+}
+
+.cl-userPreviewMainIdentifier {
+  color: #f1f5f9 !important;
+}
+
+.cl-userPreviewSecondaryIdentifier {
+  color: #94a3b8 !important;
+}
+
+/* Popover footer */
+.cl-userButtonPopoverFooter {
+  background-color: #0f172a !important;
+  border-top: 1px solid #334155 !important;
+}
+
+/* ============================================
+   CLERK USER PROFILE MODAL - DARK MODE
+   ============================================ */
+
+/* Modal container - ensure full width and proper layout */
+.cl-modalContent {
+  background-color: #0f172a !important;
+  border: 1px solid #334155 !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+  max-width: 800px !important;
+  width: 90vw !important;
+  max-height: 85vh !important;
+}
+
+/* Modal close button */
+.cl-modalCloseButton {
+  color: #94a3b8 !important;
+  top: 12px !important;
+  right: 12px !important;
+}
+
+.cl-modalCloseButton:hover {
+  color: #f1f5f9 !important;
+  background-color: #334155 !important;
+}
+
+/* Profile page root - flex layout */
+.cl-userProfile-root {
+  background-color: #0f172a !important;
+  display: flex !important;
+  min-height: 400px !important;
+  max-height: 80vh !important;
+}
+
+/* Remove max-width constraint from rootBox */
+.cl-rootBox {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.cl-userProfile-root .cl-rootBox {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Sidebar/Navbar styling */
+.cl-navbar {
+  background-color: #0f172a !important;
+  border-right: 1px solid #334155 !important;
+  min-width: 180px !important;
+  max-width: 200px !important;
+  flex-shrink: 0 !important;
+  padding: 1rem 1rem !important;
+}
+
+.cl-navbarButton {
+  color: #94a3b8 !important;
+  background-color: transparent !important;
+  padding: 0.625rem 0.75rem !important;
+  margin-bottom: 0.25rem !important;
+  border-radius: 0.375rem !important;
+}
+
+.cl-navbarButton:hover {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+.cl-navbarButton[data-active="true"] {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-left: 3px solid #3b82f6 !important;
+}
+
+/* Page content area */
+.cl-pageScrollBox {
+  background-color: #0f172a !important;
+  flex: 1 !important;
+  overflow-y: auto !important;
+  padding: 1rem 2rem !important;
+  width: 100% !important;
+}
+
+.cl-page {
+  background-color: #0f172a !important;
+  padding: 0 !important;
+}
+
+/* Override any Clerk inline max-width on page */
+.cl-page[style*="max-width"] {
+  max-width: 100% !important;
+}
+
+/* Profile page header */
+.cl-headerTitle {
+  color: #f1f5f9 !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+.cl-headerSubtitle {
+  color: #94a3b8 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Profile sections */
+.cl-profileSection {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 0.5rem !important;
+  padding: 1.25rem !important;
+  margin-bottom: 1rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.cl-profileSectionHeader {
+  border-bottom: 1px solid #334155 !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+  width: 100% !important;
+  order: -1 !important;
+}
+
+.cl-profileSectionTitle {
+  color: #f1f5f9 !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.cl-profileSectionTitleText {
+  color: #f1f5f9 !important;
+  display: block !important;
+}
+
+.cl-profileSectionSubtitle {
+  color: #94a3b8 !important;
+  display: block !important;
+  margin-top: 0.25rem !important;
+}
+
+.cl-profileSectionContent {
+  color: #cbd5e1 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* Fix profile section primary button */
+.cl-profileSectionPrimaryButton {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  margin-top: 1rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure all buttons in profile sections display correctly */
+.cl-profileSection button,
+.cl-profileSection [role="button"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: auto !important;
+  gap: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+}
+
+/* Accordion sections */
+.cl-accordionTriggerButton {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+.cl-accordionContent {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* Form fields in profile */
+.cl-formFieldInput {
+  background-color: #0f172a !important;
+  border: 1px solid #475569 !important;
+  color: #f1f5f9 !important;
+}
+
+.cl-formFieldLabel {
+  color: #cbd5e1 !important;
+}
+
+/* Avatar section */
+.cl-avatarBox {
+  background-color: #334155 !important;
+}
+
+.cl-avatarImageActionsUpload {
+  color: #3b82f6 !important;
+}
+
+/* User info text */
+.cl-userButtonBox [class*="Text"],
+.cl-userButtonBox span {
+  color: #f1f5f9 !important;
+}
+
+/* Active devices section */
+.cl-activeDeviceListItem {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* Badge/Tag styling in profile */
+.cl-badge {
+  background-color: #1e293b !important;
+  color: #94a3b8 !important;
+  border-color: #475569 !important;
+}
+
+/* ============================================
+   CLERK USER BUTTON - LIGHT MODE
+   Note: Clerk portals render outside main app, need html.light selector
+   ============================================ */
+
+/* UserButton popover - Light mode (portal-aware) */
+html.light .cl-userButtonPopoverCard,
+body.light .cl-userButtonPopoverCard,
+.light .cl-userButtonPopoverCard {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .cl-userButtonPopoverActionButton,
+body.light .cl-userButtonPopoverActionButton,
+.light .cl-userButtonPopoverActionButton {
+  color: #1e293b !important;
+}
+
+html.light .cl-userButtonPopoverActionButton:hover,
+body.light .cl-userButtonPopoverActionButton:hover,
+.light .cl-userButtonPopoverActionButton:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .cl-userButtonPopoverActionButtonText,
+body.light .cl-userButtonPopoverActionButtonText,
+.light .cl-userButtonPopoverActionButtonText {
+  color: #1e293b !important;
+}
+
+html.light .cl-userButtonPopoverActionButtonIcon,
+body.light .cl-userButtonPopoverActionButtonIcon,
+.light .cl-userButtonPopoverActionButtonIcon {
+  color: #64748b !important;
+}
+
+html.light .cl-userPreview,
+body.light .cl-userPreview,
+.light .cl-userPreview {
+  background-color: #ffffff !important;
+}
+
+html.light .cl-userPreviewMainIdentifier,
+body.light .cl-userPreviewMainIdentifier,
+.light .cl-userPreviewMainIdentifier {
+  color: #0f172a !important;
+}
+
+html.light .cl-userPreviewSecondaryIdentifier,
+body.light .cl-userPreviewSecondaryIdentifier,
+.light .cl-userPreviewSecondaryIdentifier {
+  color: #64748b !important;
+}
+
+html.light .cl-userButtonPopoverFooter,
+body.light .cl-userButtonPopoverFooter,
+.light .cl-userButtonPopoverFooter {
+  background-color: #f8fafc !important;
+  border-top-color: #e2e8f0 !important;
+}
+
+/* ============================================
+   CLERK USER PROFILE MODAL - LIGHT MODE
+   ============================================ */
+
+html.light .cl-modalContent,
+body.light .cl-modalContent,
+.light .cl-modalContent {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light .cl-modalCloseButton,
+body.light .cl-modalCloseButton,
+.light .cl-modalCloseButton {
+  color: #64748b !important;
+}
+
+html.light .cl-modalCloseButton:hover,
+body.light .cl-modalCloseButton:hover,
+.light .cl-modalCloseButton:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+html.light .cl-userProfile-root,
+body.light .cl-userProfile-root,
+.light .cl-userProfile-root {
+  background-color: #f8fafc !important;
+}
+
+html.light .cl-navbar,
+body.light .cl-navbar,
+.light .cl-navbar {
+  background-color: #f8fafc !important;
+  border-right-color: #e2e8f0 !important;
+}
+
+html.light .cl-navbarButton,
+body.light .cl-navbarButton,
+.light .cl-navbarButton {
+  color: #64748b !important;
+}
+
+html.light .cl-navbarButton:hover,
+body.light .cl-navbarButton:hover,
+.light .cl-navbarButton:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light .cl-navbarButton[data-active="true"],
+body.light .cl-navbarButton[data-active="true"],
+.light .cl-navbarButton[data-active="true"] {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-left-color: #3b82f6 !important;
+}
+
+html.light .cl-pageScrollBox,
+html.light .cl-page,
+body.light .cl-pageScrollBox,
+body.light .cl-page,
+.light .cl-pageScrollBox,
+.light .cl-page {
+  background-color: #f8fafc !important;
+}
+
+html.light .cl-headerTitle,
+body.light .cl-headerTitle,
+.light .cl-headerTitle {
+  color: #0f172a !important;
+}
+
+html.light .cl-headerSubtitle,
+body.light .cl-headerSubtitle,
+.light .cl-headerSubtitle {
+  color: #64748b !important;
+}
+
+html.light .cl-profileSection,
+body.light .cl-profileSection,
+.light .cl-profileSection {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light .cl-profileSectionHeader,
+body.light .cl-profileSectionHeader,
+.light .cl-profileSectionHeader {
+  border-bottom-color: #e2e8f0 !important;
+}
+
+html.light .cl-profileSectionTitle,
+html.light .cl-profileSectionTitleText,
+body.light .cl-profileSectionTitle,
+body.light .cl-profileSectionTitleText,
+.light .cl-profileSectionTitle,
+.light .cl-profileSectionTitleText {
+  color: #0f172a !important;
+}
+
+html.light .cl-profileSectionSubtitle,
+body.light .cl-profileSectionSubtitle,
+.light .cl-profileSectionSubtitle {
+  color: #64748b !important;
+}
+
+html.light .cl-profileSectionContent,
+body.light .cl-profileSectionContent,
+.light .cl-profileSectionContent {
+  color: #475569 !important;
+}
+
+html.light .cl-accordionTriggerButton,
+body.light .cl-accordionTriggerButton,
+.light .cl-accordionTriggerButton {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light .cl-accordionContent,
+body.light .cl-accordionContent,
+.light .cl-accordionContent {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light .cl-formFieldInput,
+body.light .cl-formFieldInput,
+.light .cl-formFieldInput {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .cl-formFieldLabel,
+body.light .cl-formFieldLabel,
+.light .cl-formFieldLabel {
+  color: #475569 !important;
+}
+
+.light .cl-avatarBox {
+  background-color: #e2e8f0 !important;
+}
+
+.light .cl-activeDeviceListItem {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .cl-badge {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* ============================================
+   ADMIN PANEL HOVER STATES - LIGHT THEME
+   ============================================ */
+
+/* Table row hover states in light theme */
+.light table tbody tr:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Action icon buttons in table cells - hover background */
+.light table td button:hover,
+.light table td a:hover {
+  background-color: #e2e8f0 !important;
+}
+
+/* Action icon buttons - hover text colors based on title attribute */
+.light table td button[title="View"]:hover,
+.light table td a[title="View"]:hover,
+.light table td button[title="Review Report"]:hover {
+  color: #3b82f6 !important;
+}
+
+.light table td button[title="Update Status"]:hover {
+  color: #f59e0b !important;
+}
+
+.light table td button[title="Delete"]:hover {
+  color: #ef4444 !important;
+}
+
+/* Grouped Reports Table - Report Card Backgrounds */
+.light .bg-dark-800 {
+  background-color: #ffffff !important;
+}
+
+.light .bg-dark-900\/50 {
+  background-color: #f8fafc !important;
+}
+
+/* Grouped Reports Table - Group Header Row Hover */
+.light .bg-dark-800>div.cursor-pointer:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Grouped Reports Table - Expand/Collapse Button Hover */
+.light .bg-dark-800 button.text-dark-400:hover {
+  color: #0f172a !important;
+}
+
+/* Grouped Reports Table - Review Button Hover (Eye icon) */
+.light .bg-dark-800 button[title="Review Report"]:hover {
+  background-color: #e2e8f0 !important;
+  color: #3b82f6 !important;
+}
+
+/* Grouped Reports Table - Pagination Button Hover */
+.light .bg-dark-800 button.p-2.rounded-lg.text-dark-400:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Grouped Reports Table - Link Hover in Light Theme */
+.light .bg-dark-800 a.text-white:hover,
+.light .bg-dark-800 a.font-medium:hover {
+  color: #3b82f6 !important;
+}
+
+/* Override Tailwind hover utilities in light theme for grouped reports */
+/* Target elements with hover:bg-dark-700 classes */
+.light .bg-dark-800 .hover\:bg-dark-700:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.light .bg-dark-800 .hover\:bg-dark-700\/50:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.light .bg-dark-800 .hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+/* Additional universal overrides for hover states in grouped reports table */
+.light .bg-dark-800 div[class*="hover"]:hover {
+  /* More specific rules above will take precedence */
+}
+
+.light .bg-dark-800 button[class*="hover"]:hover {
+  /* More specific rules above will take precedence */
+}
+
+/* Ensure report cards have proper backgrounds in light theme */
+.light .bg-dark-800 .bg-dark-800 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .bg-dark-800 .border-dark-700 {
+  border-color: #e2e8f0 !important;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Text truncation */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Float animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Glow animation */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 0 rgba(59, 130, 246, 0.7);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Slide Up animation (for text) */
+@keyframes slide-up-fade {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up-fade {
+  animation: slide-up-fade 0.5s ease-out forwards;
+}
+
+/* Slow spin */
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Logo image styling - ensure proper display in both themes */
+img[src="/logo.png"],
+img[src="/mini-logo.png"] {
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Custom Dropdown Animation */
+@keyframes dropdown-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown-fade-in 0.2s ease-out forwards;
+}
